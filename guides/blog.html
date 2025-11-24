@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website Guide - WebDev Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Blog Website Guide</h1>
+            <p>Complete guide to building a modern blogging platform</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Standard Folder Structure</h3>
+                <pre><code>blog-website/
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Header/
+│   │   │   ├── Footer/
+│   │   │   ├── BlogPost/
+│   │   │   ├── Sidebar/
+│   │   │   └── Comments/
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Blog/
+│   │   │   ├── About/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── styles/
+│   │   └── assets/
+│   │       ├── images/
+│   │       └── icons/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── postController.js
+│   │   │   ├── userController.js
+│   │   │   └── commentController.js
+│   │   ├── models/
+│   │   │   ├── Post.js
+│   │   │   ├── User.js
+│   │   │   └── Comment.js
+│   │   ├── routes/
+│   │   │   ├── posts.js
+│   │   │   ├── auth.js
+│   │   │   └── comments.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   └── errorHandler.js
+│   │   ├── config/
+│   │   │   ├── database.js
+│   │   │   └── cloudinary.js
+│   │   └── utils/
+│   ├── tests/
+│   └── package.json
+├── admin-panel/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── styles/
+│   └── package.json
+└── README.md</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Content Management System (CMS)</li>
+                    <li>Article publishing and rich text editor</li>
+                    <li>Category and tag organization system</li>
+                    <li>Comment and discussion system with moderation</li>
+                    <li>Advanced search functionality</li>
+                    <li>User roles and permissions (Admin, Editor, Author, Subscriber)</li>
+                    <li>RSS feed generation</li>
+                    <li>Newsletter subscription</li>
+                    <li>Social media integration</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for EU visitors</li>
+                    <li>Cookie consent banner implementation</li>
+                    <li>Privacy policy and terms of service pages</li>
+                    <li>Data encryption for user information</li>
+                    <li>Secure comment system with spam protection</li>
+                    <li>Newsletter double opt-in process</li>
+                    <li>User data export and deletion options</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in search and comment systems</li>
+                    <li>Cross-site scripting (XSS) in rich text content</li>
+                    <li>Cross-site request forgery (CSRF) in admin actions</li>
+                    <li>Broken authentication in admin panel</li>
+                    <li>File upload vulnerabilities in image uploads</li>
+                    <li>Brute force attacks on login pages</li>
+                    <li>Comment spam and bot attacks</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Vercel/Netlify:</strong> Frontend deployment with serverless functions</li>
+                    <li><strong>Railway/Render:</strong> Full-stack deployment for Node.js applications</li>
+                    <li><strong>WordPress:</strong> Traditional blogging platform with custom themes</li>
+                    <li><strong>Ghost:</strong> Headless CMS optimized for blogging</li>
+                    <li><strong>AWS Amplify:</strong> Scalable cloud deployment</li>
+                    <li><strong>DigitalOcean App Platform:</strong> Simple full-stack deployment</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>MongoDB:</strong> Flexible schema for content management</li>
+                    <li><strong>PostgreSQL:</strong> Robust relational database for complex queries</li>
+                    <li><strong>MySQL:</strong> Traditional choice with WordPress compatibility</li>
+                    <li><strong>SQLite:</strong> Lightweight option for small blogs</li>
+                    <li><strong>Supabase:</strong> Backend-as-a-service with real-time features</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with Static Site Generation</li>
+                    <li>Vue.js/Nuxt.js with server-side rendering</li>
+                    <li>Gatsby for high-performance static blogs</li>
+                    <li>Traditional HTML/CSS/JavaScript</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with MongoDB</li>
+                    <li>Python/Django with PostgreSQL</li>
+                    <li>PHP/Laravel with MySQL</li>
+                    <li>Ruby on Rails with PostgreSQL</li>
+                </ul>
+                <p><strong>Content Management:</strong></p>
+                <ul>
+                    <li>Headless CMS: Strapi, Contentful, Sanity</li>
+                    <li>Traditional CMS: WordPress, Joomla</li>
+                    <li>Markdown-based: Hugo, Jekyll, Eleventy</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/search/blog" target="_blank">Dribbble - Blog Design Inspiration</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/cms-themes/blog" target="_blank">ThemeForest - Blog Templates</a></li>
+                    <li><a href="https://github.com/topics/blog-template" target="_blank">GitHub - Blog Templates</a></li>
+                    <li><a href="https://codepen.io/search/pens?q=blog+layout" target="_blank">CodePen - Blog Layout Examples</a></li>
+                    <li><a href="https://awwwards.com/websites/blog/" target="_blank">Awwwards - Award-winning Blog Designs</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

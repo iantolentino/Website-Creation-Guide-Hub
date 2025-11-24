@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Guide - WebDev Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Portfolio Website Guide</h1>
+            <p>Complete guide to building a professional portfolio website</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Standard Folder Structure</h3>
+                <pre><code>portfolio-website/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   ├── robots.txt
+│   └── sitemap.xml
+├── src/
+│   ├── components/
+│   │   ├── Header/
+│   │   ├── Footer/
+│   │   ├── Hero/
+│   │   ├── About/
+│   │   ├── Projects/
+│   │   ├── Skills/
+│   │   ├── Contact/
+│   │   └── Navigation/
+│   ├── pages/
+│   │   ├── Home/
+│   │   ├── ProjectDetails/
+│   │   └── Blog/ (optional)
+│   ├── hooks/
+│   ├── utils/
+│   ├── styles/
+│   │   ├── globals.css
+│   │   ├── components/
+│   │   └── animations.css
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── projects/
+│   │   │   ├── about/
+│   │   │   └── icons/
+│   │   ├── documents/
+│   │   │   └── resume.pdf
+│   │   └── data/
+│   │       ├── projects.json
+│   │       └── skills.json
+│   └── config/
+│       ├── site.js
+│       └── seo.js
+├── functions/ (for serverless)
+│   ├── contact.js
+│   └── analytics.js
+└── package.json</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Hero section with introduction and call-to-action</li>
+                    <li>Projects gallery with filtering and categories</li>
+                    <li>Project detail pages with case studies</li>
+                    <li>Skills and technologies showcase</li>
+                    <li>About section with personal story</li>
+                    <li>Contact form with validation</li>
+                    <li>Testimonials and client reviews</li>
+                    <li>Blog section (optional for content marketing)</li>
+                    <li>Resume/CV download option</li>
+                    <li>Social media integration</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>Contact form data protection</li>
+                    <li>Cookie consent for analytics</li>
+                    <li>Privacy policy page</li>
+                    <li>Secure handling of form submissions</li>
+                    <li>GDPR compliance for EU visitors</li>
+                    <li>Analytics data anonymization</li>
+                    <li>Secure file uploads (if applicable)</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Contact form spam and injection attacks</li>
+                    <li>Cross-site scripting (XSS) in dynamic content</li>
+                    <li>File upload vulnerabilities</li>
+                    <li>Broken authentication (if admin panel exists)</li>
+                    <li>Exposed sensitive information in source code</li>
+                    <li>Vulnerable dependencies</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Vercel/Netlify:</strong> Best for static sites and JAMstack</li>
+                    <li><strong>GitHub Pages:</strong> Free hosting for static portfolios</li>
+                    <li><strong>Firebase Hosting:</strong> Google's hosting with CDN</li>
+                    <li><strong>AWS S3 + CloudFront:</strong> Scalable static hosting</li>
+                    <li><strong>Heroku:</strong> For dynamic portfolio sites</li>
+                    <li><strong>Bluehost/SiteGround:</strong> Traditional shared hosting</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>No Database:</strong> Static site with JSON files</li>
+                    <li><strong>MongoDB Atlas:</strong> For dynamic content</li>
+                    <li><strong>Firebase Firestore:</strong> Real-time database</li>
+                    <li><strong>Supabase:</strong> PostgreSQL backend</li>
+                    <li><strong>Airtable:</strong> Spreadsheet-like database</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Frameworks:</strong></p>
+                <ul>
+                    <li>React/Next.js with static generation</li>
+                    <li>Vue.js/Nuxt.js with server-side rendering</li>
+                    <li>Gatsby for high-performance static sites</li>
+                    <li>HTML/CSS/JavaScript with modern ES6+</li>
+                    <li>Svelte/SvelteKit for lightweight apps</li>
+                </ul>
+                <p><strong>Styling Options:</strong></p>
+                <ul>
+                    <li>Tailwind CSS for utility-first styling</li>
+                    <li>Styled Components for CSS-in-JS</li>
+                    <li>SASS/SCSS for advanced CSS features</li>
+                    <li>CSS Modules for component-scoped styles</li>
+                </ul>
+                <p><strong>Backend (if needed):</strong></p>
+                <ul>
+                    <li>Node.js/Express for API routes</li>
+                    <li>Serverless functions for contact forms</li>
+                    <li>PHP for traditional hosting</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/search/portfolio" target="_blank">Dribbble - Portfolio Design Inspiration</a></li>
+                    <li><a href="https://www.awwwards.com/websites/portfolio/" target="_blank">Awwwards - Award-winning Portfolios</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/portfolio" target="_blank">ThemeForest - Portfolio Templates</a></li>
+                    <li><a href="https://github.com/topics/portfolio-template" target="_blank">GitHub - Portfolio Templates</a></li>
+                    <li><a href="https://codepen.io/search/pens?q=portfolio" target="_blank">CodePen - Portfolio Components</a></li>
+                    <li><a href="https://behance.net" target="_blank">Behance - Design Portfolio Examples</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
