@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Website Guide - WebDev Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Corporate Website Guide</h1>
+            <p>Complete guide to building a professional corporate website</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Standard Folder Structure</h3>
+                <pre><code>corporate-website/
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   ├── manifest.json
+│   │   └── images/ (logos, icons)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Layout/
+│   │   │   ├── Header/
+│   │   │   ├── Footer/
+│   │   │   ├── Hero/
+│   │   │   ├── Services/
+│   │   │   ├── Team/
+│   │   │   ├── Testimonials/
+│   │   │   ├── Contact/
+│   │   │   └── News/
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── About/
+│   │   │   ├── Services/
+│   │   │   ├── Team/
+│   │   │   ├── Careers/
+│   │   │   ├── Contact/
+│   │   │   └── Blog/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   ├── components/
+│   │   │   └── corporate.css
+│   │   └── assets/
+│   │       ├── images/
+│   │       ├── documents/
+│   │       └── data/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── contactController.js
+│   │   │   ├── newsController.js
+│   │   │   └── careerController.js
+│   │   ├── models/
+│   │   │   ├── Contact.js
+│   │   │   ├── News.js
+│   │   │   └── Career.js
+│   │   ├── routes/
+│   │   │   ├── api/
+│   │   │   └── admin/
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   └── rateLimit.js
+│   │   ├── config/
+│   │   │   ├── database.js
+│   │   │   ├── email.js
+│   │   │   └── security.js
+│   │   └── utils/
+│   ├── admin/
+│   │   ├── src/
+│   │   └── package.json
+│   └── package.json
+├── content/ (for CMS)
+│   ├── pages/
+│   ├── news/
+│   └── uploads/
+└── docker/ (for containerization)
+    ├── nginx/
+    ├── nodejs/
+    └── database/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Professional header with navigation and logo</li>
+                    <li>Hero section with company value proposition</li>
+                    <li>Services/Products showcase</li>
+                    <li>About company section with history and mission</li>
+                    <li>Team members directory</li>
+                    <li>Testimonials and client logos</li>
+                    <li>Case studies and success stories</li>
+                    <li>News/Blog section for company updates</li>
+                    <li>Careers/Jobs page</li>
+                    <li>Contact forms with multiple departments</li>
+                    <li>Footer with comprehensive links and information</li>
+                    <li>Multi-language support (if international)</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European clients</li>
+                    <li>Comprehensive privacy policy</li>
+                    <li>Cookie consent management</li>
+                    <li>Data protection for contact forms</li>
+                    <li>Secure handling of job applications</li>
+                    <li>Newsletter subscription compliance</li>
+                    <li>Data retention policies</li>
+                    <li>Third-party service compliance (Google Analytics, etc.)</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in contact and career forms</li>
+                    <li>Cross-site scripting (XSS) in dynamic content</li>
+                    <li>Cross-site request forgery (CSRF) in admin actions</li>
+                    <li>File upload vulnerabilities in CMS</li>
+                    <li>Broken authentication in admin panel</li>
+                    <li>Sensitive data exposure in error messages</li>
+                    <li>DDoS attacks on public-facing pages</li>
+                    <li>Brute force attacks on login portals</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS/Azure/GCP:</strong> Enterprise cloud solutions</li>
+                    <li><strong>Netlify/Vercel:</strong> Modern JAMstack deployment</li>
+                    <li><strong>WordPress:</strong> Traditional CMS with corporate themes</li>
+                    <li><strong>Docker Containers:</strong> For scalable microservices</li>
+                    <li><strong>Traditional Hosting:</strong> cPanel shared hosting</li>
+                    <li><strong>Kubernetes:</strong> For large-scale corporate sites</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> Enterprise relational database</li>
+                    <li><strong>MySQL:</strong> Traditional web database</li>
+                    <li><strong>MongoDB:</strong> For flexible content management</li>
+                    <li><strong>Microsoft SQL Server:</strong> For Windows-based infrastructure</li>
+                    <li><strong>Headless CMS:</strong> Contentful, Strapi, or Sanity</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with TypeScript</li>
+                    <li>Vue.js/Nuxt.js for modern SPAs</li>
+                    <li>Angular for enterprise applications</li>
+                    <li>Traditional HTML/CSS with Bootstrap</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django for robust backend</li>
+                    <li>PHP/Laravel for traditional web apps</li>
+                    <li>.NET Core for Microsoft stack</li>
+                    <li>Java/Spring Boot for enterprise</li>
+                </ul>
+                <p><strong>Content Management:</strong></p>
+                <ul>
+                    <li>Headless CMS: Contentful, Strapi, Prismic</li>
+                    <li>Traditional CMS: WordPress, Drupal</li>
+                    <li>Enterprise CMS: Adobe Experience Manager, Sitecore</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://www.awwwards.com/websites/corporate/" target="_blank">Awwwards - Corporate Website Designs</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/corporate" target="_blank">ThemeForest - Corporate Templates</a></li>
+                    <li><a href="https://dribbble.com/search/corporate" target="_blank">Dribbble - Corporate Design Inspiration</a></li>
+                    <li><a href="https://land-book.com" target="_blank">Land-Book - Website Design Inspiration</a></li>
+                    <li><a href="https://siteinspire.com" target="_blank">SiteInspire - Web Design Showcase</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

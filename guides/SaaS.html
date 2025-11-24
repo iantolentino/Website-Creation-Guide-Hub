@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Website Guide - WebDev Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>SaaS Website Guide</h1>
+            <p>Complete guide to building a Software-as-a-Service platform</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Standard Folder Structure</h3>
+                <pre><code>saas-platform/
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Billing/
+│   │   │   ├── Settings/
+│   │   │   └── Common/
+│   │   ├── pages/
+│   │   │   ├── Landing/
+│   │   │   ├── Pricing/
+│   │   │   ├── Features/
+│   │   │   ├── Auth/
+│   │   │   └── App/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   ├── store/ (state management)
+│   │   ├── styles/
+│   │   └── assets/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── modules/
+│   │   │   ├── auth/
+│   │   │   ├── users/
+│   │   │   ├── billing/
+│   │   │   └── core/
+│   │   ├── shared/
+│   │   │   ├── database/
+│   │   │   ├── utils/
+│   │   │   └── middleware/
+│   │   ├── config/
+│   │   └── tests/
+│   └── package.json
+├── admin-panel/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── styles/
+│   └── package.json
+├── mobile/ (optional)
+│   ├── ios/
+│   ├── android/
+│   └── shared/
+├── docs/ (API documentation)
+│   ├── api/
+│   └── user-guides/
+└── infrastructure/
+    ├── docker/
+    ├── kubernetes/
+    └── terraform/</code></pre>
+            </div>
+            
+            <!-- Additional SaaS-specific sections would follow the same pattern -->
+            
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
