@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Medical Website Guide</h1>
+            <p>Complete guide to building HIPAA-compliant medical practice websites</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>medical-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── PatientPortal/
+│   │   │   │   ├── Login.js
+│   │   │   │   ├── Dashboard.js
+│   │   │   │   └── MedicalRecords.js
+│   │   │   ├── Appointment/
+│   │   │   │   ├── BookingForm.js
+│   │   │   │   ├── Calendar.js
+│   │   │   │   └── Confirmation.js
+│   │   │   ├── Doctor/
+│   │   │   │   ├── Profile.js
+│   │   │   │   ├── Specialties.js
+│   │   │   │   └── Availability.js
+│   │   │   ├── Services/
+│   │   │   │   ├── ServiceList.js
+│   │   │   │   ├── Treatment.js
+│   │   │   │   └── Insurance.js
+│   │   │   └── Common/
+│   │   │       ├── SecureHeader.js
+│   │   │       ├── Footer.js
+│   │   │       └── ContactForms.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Services/
+│   │   │   ├── Doctors/
+│   │   │   ├── Appointments/
+│   │   │   ├── PatientPortal/
+│   │   │   ├── Contact/
+│   │   │   └── Emergency/
+│   │   ├── hooks/
+│   │   │   ├── useAppointments.js
+│   │   │   ├── usePatientData.js
+│   │   │   └── useSecurity.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   └── encryption.js
+│   │   └── utils/
+│   │       ├── validation.js
+│   │       ├── dateUtils.js
+│   │       └── security.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── security.txt
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── patientController.js
+│   │   │   ├── appointmentController.js
+│   │   │   ├── doctorController.js
+│   │   │   └── medicalRecordController.js
+│   │   ├── models/
+│   │   │   ├── Patient.js
+│   │   │   ├── Doctor.js
+│   │   │   ├── Appointment.js
+│   │   │   ├── MedicalRecord.js
+│   │   │   ├── Prescription.js
+│   │   │   └── Insurance.js
+│   │   ├── routes/
+│   │   │   ├── patients.js
+│   │   │   ├── appointments.js
+│   │   │   ├── doctors.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── hipaaCompliance.js
+│   │   │   ├── auditLog.js
+│   │   │   └── rateLimit.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── smsService.js
+│   │   │   ├── encryptionService.js
+│   │   │   └── backupService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── security.js
+│   │       └── hipaa.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── PatientManagement/
+│   │   │   ├── AppointmentScheduler/
+│   │   │   └── Reports/
+│   │   └── pages/
+│   └── package.json
+└── compliance/
+    ├── hipaa-checklist.md
+    ├── security-audit.md
+    └── data-retention.md</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>HIPAA-compliant patient portal with secure login</li>
+                    <li>Appointment scheduling with real-time availability</li>
+                    <li>Doctor profiles with specialties and credentials</li>
+                    <li>Service descriptions and treatment information</li>
+                    <li>Secure messaging system for patient communication</li>
+                    <li>Medical records access (with proper authorization)</li>
+                    <li>Prescription refill requests</li>
+                    <li>Insurance information and verification</li>
+                    <li>Telemedicine integration for virtual visits</li>
+                    <li>Emergency contact and after-hours information</li>
+                    <li>Patient education resources and articles</li>
+                    <li>Test results delivery system</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>HIPAA compliance for protected health information (PHI)</li>
+                    <li>GDPR compliance for European patients</li>
+                    <li>Data encryption at rest and in transit</li>
+                    <li>Access controls and audit trails</li>
+                    <li>Business Associate Agreements (BAAs) with vendors</li>
+                    <li>Data backup and disaster recovery plans</li>
+                    <li>Patient consent management</li>
+                    <li>Data minimization and retention policies</li>
+                    <li>Breach notification procedures</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Unauthorized access to medical records</li>
+                    <li>SQL injection in patient search</li>
+                    <li>Cross-site scripting in patient communications</li>
+                    <li>Insecure file uploads for medical documents</li>
+                    <li>Session hijacking in patient portals</li>
+                    <li>Data leakage through error messages</li>
+                    <li>Insufficient logging and monitoring</li>
+                    <li>Weak authentication mechanisms</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS HIPAA Eligible Services:</strong> Compliant cloud infrastructure</li>
+                    <li><strong>Microsoft Azure HIPAA Services:</strong> Enterprise healthcare solutions</li>
+                    <li><strong>Google Cloud HIPAA Implementation:</strong> Secure data handling</li>
+                    <li><strong>On-premises hosting:</strong> Maximum control for sensitive data</li>
+                    <li><strong>Managed healthcare hosting:</strong> Specialized HIPAA-compliant providers</li>
+                    <li><strong>Hybrid deployment:</strong> Mix of cloud and on-premises</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> With row-level security and encryption</li>
+                    <li><strong>Microsoft SQL Server:</strong> With Always Encrypted feature</li>
+                    <li><strong>Oracle Database:</strong> With advanced security features</li>
+                    <li><strong>Encrypted MongoDB:</strong> For flexible document storage</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React with strict CSP headers</li>
+                    <li>Vue.js with Vuex for state management</li>
+                    <li>Angular with built-in security features</li>
+                    <li>Traditional stack with enhanced security headers</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with Helmet and CORS</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>.NET Core with built-in security features</li>
+                    <li>Java/Spring Boot with Spring Security</li>
+                </ul>
+                <p><strong>Security Technologies:</strong></p>
+                <ul>
+                    <li>OAuth 2.0 with OpenID Connect</li>
+                    <li>JWT with short expiration times</li>
+                    <li>SSL/TLS encryption</li>
+                    <li>HSM for key management</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/medical" target="_blank">Dribbble - Medical Design Inspiration</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/health-beauty" target="_blank">ThemeForest - Medical Templates</a></li>
+                    <li><a href="https://www.hhs.gov/hipaa" target="_blank">HHS HIPAA Guidelines</a></li>
+                    <li><a href="https://github.com/hipaa" target="_blank">GitHub - HIPAA Compliant Tools</a></li>
+                    <li><a href="https://aws.amazon.com/compliance/hipaa-compliance" target="_blank">AWS HIPAA Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS Website Guide - WebDev Guides</title>
+    <title>SaaS Website Guide - WebDev Hub</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
@@ -21,72 +21,118 @@
     <div class="container">
         <div class="guide-content">
             <div class="guide-section" id="folder-structure">
-                <h3>Standard Folder Structure</h3>
+                <h3>Folder Structure</h3>
                 <pre><code>saas-platform/
 ├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   │   ├── favicon.ico
-│   │   └── manifest.json
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Auth/
 │   │   │   ├── Dashboard/
 │   │   │   ├── Billing/
 │   │   │   ├── Settings/
-│   │   │   └── Common/
+│   │   │   └── Onboarding/
 │   │   ├── pages/
 │   │   │   ├── Landing/
 │   │   │   ├── Pricing/
 │   │   │   ├── Features/
-│   │   │   ├── Auth/
-│   │   │   └── App/
-│   │   ├── hooks/
-│   │   ├── utils/
-│   │   ├── store/ (state management)
-│   │   ├── styles/
-│   │   └── assets/
-│   └── package.json
+│   │   │   ├── Dashboard/
+│   │   │   └── Admin/
+│   │   └── hooks/
+│   │       ├── useSubscription.js
+│   │       ├── useBilling.js
+│   │       └── useAnalytics.js
 ├── backend/
 │   ├── src/
 │   │   ├── modules/
 │   │   │   ├── auth/
-│   │   │   ├── users/
 │   │   │   ├── billing/
-│   │   │   └── core/
-│   │   ├── shared/
-│   │   │   ├── database/
-│   │   │   ├── utils/
-│   │   │   └── middleware/
-│   │   ├── config/
-│   │   └── tests/
-│   └── package.json
-├── admin-panel/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── styles/
-│   └── package.json
-├── mobile/ (optional)
-│   ├── ios/
-│   ├── android/
-│   └── shared/
-├── docs/ (API documentation)
-│   ├── api/
-│   └── user-guides/
-└── infrastructure/
+│   │   │   ├── users/
+│   │   │   ├── analytics/
+│   │   │   └── notifications/
+│   │   └── shared/
+│   │       ├── types/
+│   │       ├── utils/
+│   │       └── constants/
+├── shared/ (shared types and utilities)
+└── deployments/
     ├── docker/
-    ├── kubernetes/
-    └── terraform/</code></pre>
+    └── kubernetes/</code></pre>
             </div>
             
-            <!-- Additional SaaS-specific sections would follow the same pattern -->
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Multi-tier subscription system with pricing plans</li>
+                    <li>User authentication & authorization with roles</li>
+                    <li>Payment integration (Stripe, PayPal, Paddle)</li>
+                    <li>Admin dashboard with analytics and user management</li>
+                    <li>Customer management and support system</li>
+                    <li>API documentation and integration guides</li>
+                    <li>Landing page with conversion optimization</li>
+                    <li>User onboarding and tutorial system</li>
+                    <li>Usage analytics and reporting</li>
+                    <li>Email notifications and automation</li>
+                </ul>
+            </div>
             
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European users</li>
+                    <li>Data processing agreements</li>
+                    <li>Secure payment information handling</li>
+                    <li>User data encryption at rest and in transit</li>
+                    <li>Privacy policy and data retention policies</li>
+                    <li>Cookie consent management</li>
+                    <li>Data breach notification procedures</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>API security and rate limiting</li>
+                    <li>Authentication bypass vulnerabilities</li>
+                    <li>Payment data exposure</li>
+                    <li>Cross-tenant data access</li>
+                    <li>Insecure direct object references</li>
+                    <li>SSRF attacks in file uploads</li>
+                    <li>Subscription plan manipulation</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS/Azure/GCP:</strong> Cloud-native deployment with auto-scaling</li>
+                    <li><strong>Vercel/Netlify:</strong> Frontend with serverless functions</li>
+                    <li><strong>Railway/Render:</strong> Simplified full-stack deployment</li>
+                    <li><strong>Docker/Kubernetes:</strong> Containerized microservices</li>
+                    <li><strong>Heroku:</strong> Platform-as-a-service for rapid deployment</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex relationships and ACID compliance</li>
+                    <li><strong>MongoDB:</strong> For flexible schema and rapid iteration</li>
+                    <li><strong>Redis:</strong> For caching and session storage</li>
+                    <li><strong>TimescaleDB:</strong> For time-series analytics data</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend:</strong> React/Next.js, Vue/Nuxt.js, or Angular with TypeScript</p>
+                <p><strong>Backend:</strong> Node.js/Express, Python/Django, Ruby on Rails, or .NET Core</p>
+                <p><strong>Payment:</strong> Stripe, PayPal, Paddle, or Chargebee</p>
+                <p><strong>Analytics:</strong> Mixpanel, Amplitude, or Google Analytics</p>
+            </div>
         </div>
     </div>
 
     <div id="footer"></div>
-
     <script src="../js/main.js"></script>
 </body>
 </html>

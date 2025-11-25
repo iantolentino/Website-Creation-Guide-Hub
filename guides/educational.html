@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Educational/LMS Website Guide</h1>
+            <p>Complete guide to building Learning Management Systems and educational platforms</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>educational-platform/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Course/
+│   │   │   │   ├── CourseCard.js
+│   │   │   │   ├── CourseList.js
+│   │   │   │   └── CourseProgress.js
+│   │   │   ├── Lesson/
+│   │   │   │   ├── VideoPlayer.js
+│   │   │   │   ├── LessonContent.js
+│   │   │   │   └── LessonNavigation.js
+│   │   │   ├── Quiz/
+│   │   │   │   ├── QuizComponent.js
+│   │   │   │   ├── Question.js
+│   │   │   │   └── Results.js
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── StudentDashboard.js
+│   │   │   │   ├── InstructorDashboard.js
+│   │   │   │   └── AdminDashboard.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── Sidebar.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Courses/
+│   │   │   ├── Learning/
+│   │   │   ├── Profile/
+│   │   │   └── Admin/
+│   │   ├── hooks/
+│   │   │   ├── useCourses.js
+│   │   │   ├── useProgress.js
+│   │   │   └── useAnalytics.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── auth.js
+│   │   │   └── storage.js
+│   │   └── utils/
+│   │       ├── constants.js
+│   │       ├── helpers.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── courseController.js
+│   │   │   ├── userController.js
+│   │   │   ├── lessonController.js
+│   │   │   ├── quizController.js
+│   │   │   └── progressController.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Course.js
+│   │   │   ├── Lesson.js
+│   │   │   ├── Quiz.js
+│   │   │   ├── Enrollment.js
+│   │   │   └── Progress.js
+│   │   ├── routes/
+│   │   │   ├── courses.js
+│   │   │   ├── auth.js
+│   │   │   ├── lessons.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   └── roleCheck.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── videoProcessing.js
+│   │   │   └── certificateGenerator.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── cloudinary.js
+│   │       └── aws.js
+│   └── package.json
+├── content/
+│   ├── videos/
+│   ├── documents/
+│   ├── images/
+│   └── certificates/
+└── docs/
+    ├── api.md
+    └── deployment.md</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Course catalog with search and filtering</li>
+                    <li>Video hosting and streaming with progress tracking</li>
+                    <li>Quiz and assessment system with automatic grading</li>
+                    <li>Progress tracking and completion certificates</li>
+                    <li>Discussion forums and Q&A sections</li>
+                    <li>Instructor dashboards with analytics</li>
+                    <li>Student enrollment and payment processing</li>
+                    <li>Assignment submission and grading system</li>
+                    <li>Live class integration (Zoom, Google Meet)</li>
+                    <li>Mobile-responsive learning interface</li>
+                    <li>Gamification (badges, points, leaderboards)</li>
+                    <li>Multi-language support</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>FERPA compliance for educational records (US)</li>
+                    <li>GDPR compliance for European students</li>
+                    <li>COPPA compliance for under-13 users</li>
+                    <li>Secure handling of student performance data</li>
+                    <li>Data encryption for sensitive information</li>
+                    <li>Privacy policy detailing data usage</li>
+                    <li>Parental consent for minor users</li>
+                    <li>Data retention and deletion policies</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Unauthorized access to course materials</li>
+                    <li>SQL injection in search and user management</li>
+                    <li>Cross-site scripting in discussion forums</li>
+                    <li>Video content piracy and download protection</li>
+                    <li>Quiz answer manipulation</li>
+                    <li>Grade tampering vulnerabilities</li>
+                    <li>File upload vulnerabilities in assignments</li>
+                    <li>Session hijacking in long learning sessions</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS Educate:</strong> Specialized for educational institutions</li>
+                    <li><strong>Google Cloud Platform:</strong> With integrated video streaming</li>
+                    <li><strong>Microsoft Azure:</strong> With Teams integration</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective for smaller institutions</li>
+                    <li><strong>Moodle Cloud:</strong> Managed LMS hosting</li>
+                    <li><strong>Self-hosted:</strong> On-premises for maximum control</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex relationships and reporting</li>
+                    <li><strong>MongoDB:</strong> For flexible course content storage</li>
+                    <li><strong>MySQL:</strong> Traditional relational database</li>
+                    <li><strong>Redis:</strong> For caching and session storage</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with TypeScript</li>
+                    <li>Vue.js/Nuxt.js with Vuetify</li>
+                    <li>Angular with Material Design</li>
+                    <li>Traditional HTML/CSS with Bootstrap</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Active Record</li>
+                </ul>
+                <p><strong>Video Streaming:</strong></p>
+                <ul>
+                    <li>Video.js, Plyr, or custom HTML5 video player</li>
+                    <li>Cloudinary, Vimeo, or AWS S3 for video hosting</li>
+                    <li>HLS/DASH for adaptive bitrate streaming</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/lms" target="_blank">Dribbble - LMS Design Inspiration</a></li>
+                    <li><a href="https://themeforest.net/category/cms-themes/education" target="_blank">ThemeForest - Education Templates</a></li>
+                    <li><a href="https://github.com/topics/lms" target="_blank">GitHub - LMS Projects</a></li>
+                    <li><a href="https://moodle.org" target="_blank">Moodle - Open Source LMS</a></li>
+                    <li><a href="https://edx.readthedocs.org" target="_blank">edX Platform Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

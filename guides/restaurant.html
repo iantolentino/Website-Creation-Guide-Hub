@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Restaurant Website Guide</h1>
+            <p>Complete guide to building restaurant websites with online ordering and reservations</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>restaurant-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Menu/
+│   │   │   │   ├── MenuCategory.js
+│   │   │   │   ├── MenuItem.js
+│   │   │   │   └── MenuFilter.js
+│   │   │   ├── Reservation/
+│   │   │   │   ├── ReservationForm.js
+│   │   │   │   ├── TimeSlotPicker.js
+│   │   │   │   └── ReservationConfirmation.js
+│   │   │   ├── Ordering/
+│   │   │   │   ├── Cart.js
+│   │   │   │   ├── Checkout.js
+│   │   │   │   └── OrderTracking.js
+│   │   │   ├── Gallery/
+│   │   │   │   ├── ImageGallery.js
+│   │   │   │   ├── PhotoGrid.js
+│   │   │   │   └── Lightbox.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── ContactInfo.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Menu/
+│   │   │   ├── Reservations/
+│   │   │   ├── OrderOnline/
+│   │   │   ├── Gallery/
+│   │   │   ├── About/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   │   ├── useMenu.js
+│   │   │   ├── useReservations.js
+│   │   │   └── useCart.js
+│   │   ├── services/
+│   │   │   ├── menuService.js
+│   │   │   ├── reservationService.js
+│   │   │   └── paymentService.js
+│   │   └── utils/
+│   │       ├── dateUtils.js
+│   │       ├── priceUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── images/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── menuController.js
+│   │   │   ├── reservationController.js
+│   │   │   ├── orderController.js
+│   │   │   └── tableController.js
+│   │   ├── models/
+│   │   │   ├── MenuItem.js
+│   │   │   ├── Category.js
+│   │   │   ├── Reservation.js
+│   │   │   ├── Order.js
+│   │   │   ├── Table.js
+│   │   │   └── Customer.js
+│   │   ├── routes/
+│   │   │   ├── menu.js
+│   │   │   ├── reservations.js
+│   │   │   ├── orders.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── cors.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── smsService.js
+│   │   │   └── paymentService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── twilio.js
+│   │       └── stripe.js
+│   └── package.json
+├── admin-panel/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── MenuManager/
+│   │   │   ├── ReservationManager/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── docs/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Dynamic menu with categories, prices, and dietary information</li>
+                    <li>Online table reservation system with real-time availability</li>
+                    <li>Food ordering and delivery/pickup options</li>
+                    <li>Image gallery showcasing food and ambiance</li>
+                    <li>Location and hours with Google Maps integration</li>
+                    <li>Special offers, promotions, and loyalty programs</li>
+                    <li>Customer reviews and testimonials</li>
+                    <li>Event booking for private parties</li>
+                    <li>Mobile-optimized design for on-the-go access</li>
+                    <li>Multi-language support for diverse customers</li>
+                    <li>Integration with delivery services (Uber Eats, DoorDash)</li>
+                    <li>Kitchen display system integration</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European customers</li>
+                    <li>Secure handling of payment information (PCI DSS)</li>
+                    <li>Customer data protection for reservations and orders</li>
+                    <li>Cookie consent for analytics and tracking</li>
+                    <li>Data retention policies for customer information</li>
+                    <li>Opt-in for marketing communications</li>
+                    <li>Secure storage of dietary preferences and allergies</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in search and filtering</li>
+                    <li>Cross-site scripting in customer reviews</li>
+                    <li>Payment data interception</li>
+                    <li>Reservation system manipulation</li>
+                    <li>Menu price tampering</li>
+                    <li>File upload vulnerabilities in image gallery</li>
+                    <li>DDoS attacks during peak hours</li>
+                    <li>Order system abuse</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Netlify/Vercel:</strong> For static frontend with serverless functions</li>
+                    <li><strong>Heroku:</strong> For full-stack applications</li>
+                    <li><strong>AWS Lightsail:</strong> Cost-effective VPS solution</li>
+                    <li><strong>WordPress + WooCommerce:</strong> For restaurants using WordPress</li>
+                    <li><strong>Square Online:</strong> Integrated with Square POS systems</li>
+                    <li><strong>Google Cloud Run:</strong> Containerized deployment</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex reservation systems</li>
+                    <li><strong>MongoDB:</strong> For flexible menu management</li>
+                    <li><strong>MySQL:</strong> Traditional relational database</li>
+                    <li><strong>Redis:</strong> For caching menu and reservation data</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with responsive design</li>
+                    <li>Vue.js/Nuxt.js with Vuetify</li>
+                    <li>Traditional HTML/CSS/JavaScript with Bootstrap</li>
+                    <li>Mobile-first PWA for offline functionality</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with real-time features</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Active Record</li>
+                </ul>
+                <p><strong>Third-party Integrations:</strong></p>
+                <ul>
+                    <li>OpenTable API for reservations</li>
+                    <li>Google Maps API for location</li>
+                    <li>Stripe/Square for payments</li>
+                    <li>Twilio for SMS notifications</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/restaurant" target="_blank">Dribbble - Restaurant Design Inspiration</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/restaurant" target="_blank">ThemeForest - Restaurant Templates</a></li>
+                    <li><a href="https://github.com/topics/restaurant-website" target="_blank">GitHub - Restaurant Website Projects</a></li>
+                    <li><a href="https://www.opentable.com/developer" target="_blank">OpenTable API Documentation</a></li>
+                    <li><a href="https://developer.squareup.com" target="_blank">Square Developer Portal</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
