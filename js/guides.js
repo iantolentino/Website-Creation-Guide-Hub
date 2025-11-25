@@ -50,11 +50,11 @@ function createFallbackHeader() {
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="guides/ecommerce.html">E-commerce</a></li>
-                            <li><a href="guides/blog.html">Blog</a></li>
-                            <li><a href="guides/portfolio.html">Portfolio</a></li>
-                            <li><a href="guides/corporate.html">Corporate</a></li>
+                            // <li><a href="index.html">Home</a></li>
+                            // <li><a href="guides/ecommerce.html">E-commerce</a></li>
+                            // <li><a href="guides/blog.html">Blog</a></li>
+                            // <li><a href="guides/portfolio.html">Portfolio</a></li>
+                            // <li><a href="guides/corporate.html">Corporate</a></li>
                         </ul>
                     </nav>
                 </div>
