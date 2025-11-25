@@ -14,32 +14,219 @@
         <div class="container">
             <a href="../index.html" class="back-btn">Back to Home</a>
             <h1>Real Estate Website Guide</h1>
-            <p>Complete guide to building property listing websites</p>
+            <p>Complete guide to building property listing and real estate agency websites</p>
         </div>
     </section>
 
     <div class="container">
         <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>real-estate-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Property/
+│   │   │   │   ├── PropertyCard.js
+│   │   │   │   ├── PropertyGrid.js
+│   │   │   │   ├── PropertyDetails.js
+│   │   │   │   └── ImageGallery.js
+│   │   │   ├── Search/
+│   │   │   │   ├── SearchFilters.js
+│   │   │   │   ├── MapSearch.js
+│   │   │   │   ├── PriceRange.js
+│   │   │   │   └── LocationSearch.js
+│   │   │   ├── Map/
+│   │   │   │   ├── PropertyMap.js
+│   │   │   │   ├── ClusterMap.js
+│   │   │   │   └── MapPopup.js
+│   │   │   ├── Agent/
+│   │   │   │   ├── AgentProfile.js
+│   │   │   │   ├── AgentList.js
+│   │   │   │   └── ContactAgent.js
+│   │   │   ├── Mortgage/
+│   │   │   │   ├── Calculator.js
+│   │   │   │   ├── PreApproval.js
+│   │   │   │   └── RateComparison.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── ContactForms.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Properties/
+│   │   │   ├── PropertyDetails/
+│   │   │   ├── Agents/
+│   │   │   ├── Mortgage/
+│   │   │   ├── Neighborhoods/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   │   ├── useProperties.js
+│   │   │   ├── useSearch.js
+│   │   │   ├── useMap.js
+│   │   │   └── useMortgage.js
+│   │   ├── services/
+│   │   │   ├── propertyService.js
+│   │   │   ├── mapService.js
+│   │   │   └── idxService.js
+│   │   └── utils/
+│   │       ├── priceUtils.js
+│   │       ├── locationUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── propertyController.js
+│   │   │   ├── agentController.js
+│   │   │   ├── searchController.js
+│   │   │   └── leadController.js
+│   │   ├── models/
+│   │   │   ├── Property.js
+│   │   │   ├── Agent.js
+│   │   │   ├── Lead.js
+│   │   │   ├── Favorite.js
+│   │   │   ├── Search.js
+│   │   │   └── Neighborhood.js
+│   │   ├── routes/
+│   │   │   ├── properties.js
+│   │   │   ├── agents.js
+│   │   │   ├── search.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   └── rateLimit.js
+│   │   ├── services/
+│   │   │   ├── idxService.js
+│   │   │   ├── emailService.js
+│   │   │   ├── imageProcessing.js
+│   │   │   └── geocodingService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── mapbox.js
+│   │       └── aws.js
+│   └── package.json
+├── admin-panel/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── PropertyManager/
+│   │   │   ├── LeadManager/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── idx-integration/
+    ├── rets-client/
+    └── data-sync/</code></pre>
+            </div>
+            
             <div class="guide-section" id="key-components">
                 <h3>Key Components</h3>
                 <ul>
-                    <li>Property search with filters (price, location, type)</li>
-                    <li>Property listing management</li>
-                    <li>Image galleries and virtual tours</li>
-                    <li>Agent profiles and contact forms</li>
-                    <li>Mortgage calculator</li>
-                    <li>Neighborhood information</li>
-                    <li>Lead capture and management</li>
-                    <li>IDX integration</li>
+                    <li>Advanced property search with filters (price, location, type, features)</li>
+                    <li>Interactive map with property markers and clustering</li>
+                    <li>Property listing management with image galleries</li>
+                    <li>Virtual tours and 360° property views</li>
+                    <li>Agent profiles with contact forms and listings</li>
+                    <li>Mortgage calculator and pre-approval forms</li>
+                    <li>Neighborhood information and school districts</li>
+                    <li>Lead capture and management system</li>
+                    <li>IDX/MLS integration for real-time listings</li>
+                    <li>Property comparison tools</li>
+                    <li>Saved searches and favorite properties</li>
+                    <li>Mobile-responsive design with GPS integration</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European users</li>
+                    <li>Secure handling of lead and contact information</li>
+                    <li>Cookie consent for analytics and tracking</li>
+                    <li>Data encryption for sensitive user information</li>
+                    <li>Privacy policy detailing data usage</li>
+                    <li>Opt-in for marketing communications</li>
+                    <li>Data retention policies for leads and inquiries</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in property search</li>
+                    <li>Cross-site scripting in property descriptions</li>
+                    <li>File upload vulnerabilities in image galleries</li>
+                    <li>Data scraping of property listings</li>
+                    <li>Lead information exposure</li>
+                    <li>Map API key exposure</li>
+                    <li>IDX data feed security</li>
+                    <li>DDoS attacks during peak traffic</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS EC2/RDS:</strong> Scalable cloud infrastructure</li>
+                    <li><strong>Google Cloud Platform:</strong> With Maps API integration</li>
+                    <li><strong>Azure App Service:</strong> Managed application hosting</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective VPS solutions</li>
+                    <li><strong>WordPress + IDX Plugin:</strong> For smaller agencies</li>
+                    <li><strong>Docker/Kubernetes:</strong> For large-scale deployments</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL with PostGIS:</strong> For spatial queries and location data</li>
+                    <li><strong>MongoDB:</strong> For flexible property data storage</li>
+                    <li><strong>MySQL:</strong> Traditional relational database</li>
+                    <li><strong>Redis:</strong> For caching search results and property data</li>
+                    <li><strong>Elasticsearch:</strong> For advanced search capabilities</li>
                 </ul>
             </div>
             
             <div class="guide-section" id="technologies">
-                <h3>Recommended Technologies</h3>
-                <p><strong>Frontend:</strong> React, Vue.js, or traditional stack</p>
-                <p><strong>Maps:</strong> Google Maps API or Mapbox</p>
-                <p><strong>IDX:</strong> Integration with real estate data feeds</p>
-                <p><strong>Database:</strong> PostgreSQL with PostGIS for location data</p>
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with server-side rendering</li>
+                    <li>Vue.js/Nuxt.js with Vuex</li>
+                    <li>Angular with Material Design</li>
+                    <li>Traditional stack with jQuery and Bootstrap</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>.NET Core with Entity Framework</li>
+                </ul>
+                <p><strong>Map & Location Services:</strong></p>
+                <ul>
+                    <li>Google Maps JavaScript API</li>
+                    <li>Mapbox GL JS</li>
+                    <li>Leaflet with OpenStreetMap</li>
+                    <li>Google Geocoding API</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/real_estate" target="_blank">Dribbble - Real Estate Design</a></li>
+                    <li><a href="https://themeforest.net/category/real-estate" target="_blank">ThemeForest - Real Estate Templates</a></li>
+                    <li><a href="https://developers.google.com/maps/documentation" target="_blank">Google Maps API Docs</a></li>
+                    <li><a href="https://docs.mapbox.com" target="_blank">Mapbox Documentation</a></li>
+                    <li><a href="https://github.com/topics/real-estate" target="_blank">GitHub - Real Estate Projects</a></li>
+                </ul>
             </div>
         </div>
     </div>

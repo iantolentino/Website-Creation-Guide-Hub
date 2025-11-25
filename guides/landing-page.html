@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Landing Page Website Guide</h1>
+            <p>Complete guide to building high-conversion single-page websites</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>landing-page/
+├── src/
+│   ├── sections/
+│   │   ├── Hero/
+│   │   │   ├── Hero.js
+│   │   │   ├── Hero.css
+│   │   │   └── CTAButtons.js
+│   │   ├── Features/
+│   │   │   ├── Features.js
+│   │   │   ├── FeatureCard.js
+│   │   │   └── Features.css
+│   │   ├── Benefits/
+│   │   │   ├── Benefits.js
+│   │   │   ├── BenefitList.js
+│   │   │   └── Benefits.css
+│   │   ├── Testimonials/
+│   │   │   ├── Testimonials.js
+│   │   │   ├── TestimonialCard.js
+│   │   │   └── Testimonials.css
+│   │   ├── Pricing/
+│   │   │   ├── Pricing.js
+│   │   │   ├── PricingCard.js
+│   │   │   └── Pricing.css
+│   │   ├── FAQ/
+│   │   │   ├── FAQ.js
+│   │   │   ├── FAQItem.js
+│   │   │   └── FAQ.css
+│   │   └── Contact/
+│   │       ├── ContactForm.js
+│   │       ├── LeadCapture.js
+│   │       └── Contact.css
+│   ├── components/
+│   │   ├── Navigation/
+│   │   │   ├── Navbar.js
+│   │   │   ├── MobileMenu.js
+│   │   │   └── Navigation.css
+│   │   ├── Forms/
+│   │   │   ├── LeadForm.js
+│   │   │   ├── EmailCapture.js
+│   │   │   └── Forms.css
+│   │   ├── UI/
+│   │   │   ├── Button.js
+│   │   │   ├── Modal.js
+│   │   │   ├── ScrollToTop.js
+│   │   │   └── UI.css
+│   │   └── Analytics/
+│   │       ├── Tracking.js
+│   │       ├── ConversionTracker.js
+│   │       └── Analytics.css
+│   ├── hooks/
+│   │   ├── useScroll.js
+│   │   ├── useForm.js
+│   │   ├── useAnalytics.js
+│   │   └── useVisibility.js
+│   ├── utils/
+│   │   ├── scrollUtils.js
+│   │   ├── formValidation.js
+│   │   ├── analytics.js
+│   │   └── constants.js
+│   ├── styles/
+│   │   ├── globals.css
+│   │   ├── variables.css
+│   │   ├── animations.css
+│   │   └── responsive.css
+│   └── public/
+│       ├── index.html
+│       ├── favicon.ico
+│       ├── og-image.jpg
+│       └── robots.txt
+├── analytics/
+│   ├── google-tag-manager/
+│   ├── hotjar-config/
+│   └── conversion-tracking/
+├── seo/
+│   ├── meta-tags.js
+│   ├── structured-data.js
+│   └── sitemap.xml
+└── tests/
+    ├── a-b-tests/
+    ├── performance-tests/
+    └── conversion-tests/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Hero section with compelling headline and clear value proposition</li>
+                    <li>Lead capture forms with progressive profiling</li>
+                    <li>Strong call-to-action buttons throughout the page</li>
+                    <li>Features and benefits sections with social proof</li>
+                    <li>Testimonials and customer success stories</li>
+                    <li>Pricing tables with clear differentiation</li>
+                    <li>FAQ section addressing common objections</li>
+                    <li>Trust indicators (logos, security badges, certifications)</li>
+                    <li>Mobile-optimized design with fast loading times</li>
+                    <li>Exit-intent popups and scroll-triggered modals</li>
+                    <li>Social proof notifications (recent signups, purchases)</li>
+                    <li>Video demonstrations and product tours</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European visitors</li>
+                    <li>Cookie consent banner implementation</li>
+                    <li>Privacy policy and data usage disclosure</li>
+                    <li>Secure handling of lead information</li>
+                    <li>Opt-in consent for marketing communications</li>
+                    <li>Data retention and deletion policies</li>
+                    <li>CCPA compliance for California visitors</li>
+                    <li>Third-party tracking disclosure</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Form data interception</li>
+                    <li>Cross-site scripting in user inputs</li>
+                    <li>Email injection in contact forms</li>
+                    <li>Clickjacking attacks</li>
+                    <li>Malicious file uploads</li>
+                    <li>DDoS attacks during product launches</li>
+                    <li>SEO spam and content scraping</li>
+                    <li>Analytics data manipulation</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Netlify:</strong> For static sites with form handling</li>
+                    <li><strong>Vercel:</strong> For Next.js and React applications</li>
+                    <li><strong>GitHub Pages:</strong> Free hosting for static sites</li>
+                    <li><strong>Cloudflare Pages:</strong> With global CDN</li>
+                    <li><strong>AWS S3 + CloudFront:</strong> Scalable static hosting</li>
+                    <li><strong>WordPress with landing page builders:</strong> For non-technical users</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>No database:</strong> For completely static landing pages</li>
+                    <li><strong>MongoDB Atlas:</strong> For lead storage</li>
+                    <li><strong>Firebase Firestore:</strong> Real-time lead management</li>
+                    <li><strong>Airtable:</strong> Simple spreadsheet-like database</li>
+                    <li><strong>PostgreSQL:</strong> For complex lead tracking</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with static generation</li>
+                    <li>Vue.js/Nuxt.js with server-side rendering</li>
+                    <li>HTML/CSS/JavaScript with modern frameworks</li>
+                    <li>Gatsby for blazing-fast static sites</li>
+                </ul>
+                <p><strong>Backend Options (if needed):</strong></p>
+                <ul>
+                    <li>Node.js with Express</li>
+                    <li>Serverless functions (AWS Lambda, Vercel Functions)</li>
+                    <li>Firebase for real-time features</li>
+                    <li>No backend (forms handled by third-party services)</li>
+                </ul>
+                <p><strong>Analytics & Tracking:</strong></p>
+                <ul>
+                    <li>Google Analytics 4</li>
+                    <li>Google Tag Manager</li>
+                    <li>Hotjar for user behavior</li>
+                    <li>Facebook Pixel for conversion tracking</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/landing_page" target="_blank">Dribbble - Landing Page Design</a></li>
+                    <li><a href="https://themeforest.net/category/marketing/landing-pages" target="_blank">ThemeForest - Landing Page Templates</a></li>
+                    <li><a href="https://land-book.com" target="_blank">Land-book - Landing Page Inspiration</a></li>
+                    <li><a href="https://www.landingfolio.com" target="_blank">LandingFolio - Landing Page Examples</a></li>
+                    <li><a href="https://github.com/topics/landing-page" target="_blank">GitHub - Landing Page Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

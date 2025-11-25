@@ -14,32 +14,224 @@
         <div class="container">
             <a href="../index.html" class="back-btn">Back to Home</a>
             <h1>Non-Profit Website Guide</h1>
-            <p>Complete guide to building donation and volunteer platforms</p>
+            <p>Complete guide to building donation and volunteer management platforms</p>
         </div>
     </section>
 
     <div class="container">
         <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>nonprofit-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Donation/
+│   │   │   │   ├── DonationForm.js
+│   │   │   │   ├── RecurringDonation.js
+│   │   │   │   ├── DonationTiers.js
+│   │   │   │   └── TaxReceipt.js
+│   │   │   ├── Volunteer/
+│   │   │   │   ├── SignupForm.js
+│   │   │   │   ├── OpportunityList.js
+│   │   │   │   ├── Schedule.js
+│   │   │   │   └── HoursTracker.js
+│   │   │   ├── Events/
+│   │   │   │   ├── EventCalendar.js
+│   │   │   │   ├── Registration.js
+│   │   │   │   ├── TicketSales.js
+│   │   │   │   └── EventGallery.js
+│   │   │   ├── Impact/
+│   │   │   │   ├── Stories.js
+│   │   │   │   ├── Metrics.js
+│   │   │   │   ├── Reports.js
+│   │   │   │   └── Testimonials.js
+│   │   │   ├── Fundraising/
+│   │   │   │   ├── Campaigns.js
+│   │   │   │   ├── Progress.js
+│   │   │   │   ├── Sponsors.js
+│   │   │   │   └── MatchingGifts.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── Newsletter.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── About/
+│   │   │   ├── Donate/
+│   │   │   ├── Volunteer/
+│   │   │   ├── Events/
+│   │   │   ├── Impact/
+│   │   │   ├── Blog/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   │   ├── useDonations.js
+│   │   │   ├── useVolunteers.js
+│   │   │   ├── useEvents.js
+│   │   │   └── useAnalytics.js
+│   │   ├── services/
+│   │   │   ├── donationService.js
+│   │   │   ├── emailService.js
+│   │   │   └── paymentService.js
+│   │   └── utils/
+│   │       ├── currencyUtils.js
+│   │       ├── dateUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── donationController.js
+│   │   │   ├── volunteerController.js
+│   │   │   ├── eventController.js
+│   │   │   ├── donorController.js
+│   │   │   └── reportController.js
+│   │   ├── models/
+│   │   │   ├── Donor.js
+│   │   │   ├── Donation.js
+│   │   │   ├── Volunteer.js
+│   │   │   ├── Event.js
+│   │   │   ├── Campaign.js
+│   │   │   └── ImpactReport.js
+│   │   ├── routes/
+│   │   │   ├── donations.js
+│   │   │   ├── volunteers.js
+│   │   │   ├── events.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   └── rateLimit.js
+│   │   ├── services/
+│   │   │   ├── paymentService.js
+│   │   │   ├── emailService.js
+│   │   │   ├── receiptService.js
+│   │   │   └── reportingService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── stripe.js
+│   │       └── mailchimp.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── DonorManagement/
+│   │   │   ├── VolunteerManagement/
+│   │   │   └── Reporting/
+│   │   └── pages/
+│   └── package.json
+└── compliance/
+    ├── tax-documents/
+    └── privacy-policies/</code></pre>
+            </div>
+            
             <div class="guide-section" id="key-components">
                 <h3>Key Components</h3>
                 <ul>
-                    <li>Donation processing system</li>
-                    <li>Volunteer registration and management</li>
-                    <li>Event calendar and registration</li>
-                    <li>Impact stories and success metrics</li>
-                    <li>Newsletter subscription</li>
-                    <li>Grant application forms</li>
+                    <li>Donation processing with multiple payment options</li>
+                    <li>Volunteer registration and management system</li>
+                    <li>Event calendar and registration platform</li>
+                    <li>Impact stories and success metrics display</li>
+                    <li>Newsletter subscription and email marketing</li>
+                    <li>Grant application and management system</li>
                     <li>Transparency and financial reports</li>
-                    <li>Multi-language support</li>
+                    <li>Multi-language and accessibility support</li>
+                    <li>Recurring donation management</li>
+                    <li>Corporate sponsorship portals</li>
+                    <li>Fundraising campaign progress tracking</li>
+                    <li>Tax receipt generation and delivery</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European supporters</li>
+                    <li>Secure handling of donor information</li>
+                    <li>Payment Card Industry Data Security Standard (PCI DSS)</li>
+                    <li>Data encryption for sensitive information</li>
+                    <li>Privacy policy and data usage transparency</li>
+                    <li>Opt-in consent for communications</li>
+                    <li>Data retention and deletion policies</li>
+                    <li>Children's Online Privacy Protection Act (COPPA)</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in donation forms</li>
+                    <li>Cross-site scripting in user submissions</li>
+                    <li>Payment data interception</li>
+                    <li>Volunteer data exposure</li>
+                    <li>Event registration manipulation</li>
+                    <li>Email list security breaches</li>
+                    <li>File upload vulnerabilities</li>
+                    <li>DDoS attacks during fundraising events</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS Nonprofit Credits:</strong> Free credits for eligible organizations</li>
+                    <li><strong>Google for Nonprofits:</strong> With G Suite and cloud credits</li>
+                    <li><strong>Microsoft Tech for Social Impact:</strong> Discounted Azure services</li>
+                    <li><strong>Shared hosting:</strong> Cost-effective for smaller organizations</li>
+                    <li><strong>WordPress with nonprofit plugins:</strong> Easy to manage</li>
+                    <li><strong>Netlify/Vercel:</strong> For static sites with serverless functions</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex donor relationships</li>
+                    <li><strong>MySQL:</strong> Traditional and cost-effective</li>
+                    <li><strong>MongoDB:</strong> For flexible data storage</li>
+                    <li><strong>SQLite:</strong> For smaller organizations</li>
                 </ul>
             </div>
             
             <div class="guide-section" id="technologies">
-                <h3>Recommended Technologies</h3>
-                <p><strong>Donations:</strong> Stripe, PayPal, or dedicated nonprofit processors</p>
-                <p><strong>CMS:</strong> WordPress with nonprofit themes</p>
-                <p><strong>Email:</strong> Mailchimp, Constant Contact integration</p>
-                <p><strong>Events:</strong> Eventbrite API integration</p>
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with TypeScript</li>
+                    <li>Vue.js/Nuxt.js with Vuetify</li>
+                    <li>Traditional HTML/CSS with Bootstrap</li>
+                    <li>Mobile-first responsive design</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with REST API</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Active Record</li>
+                </ul>
+                <p><strong>Payment Processors:</strong></p>
+                <ul>
+                    <li>Stripe with nonprofit pricing</li>
+                    <li>PayPal Giving Fund</li>
+                    <li>Authorize.net for nonprofits</li>
+                    <li>Square for in-person donations</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/nonprofit" target="_blank">Dribbble - Nonprofit Design</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/charity-non-profit" target="_blank">ThemeForest - Nonprofit Templates</a></li>
+                    <li><a href="https://github.com/topics/nonprofit" target="_blank">GitHub - Nonprofit Projects</a></li>
+                    <li><a href="https://stripe.com/docs/connect/custom-accounts" target="_blank">Stripe Nonprofit Documentation</a></li>
+                    <li><a href="https://www.techsoup.org" target="_blank">TechSoup - Technology for Nonprofits</a></li>
+                </ul>
             </div>
         </div>
     </div>
