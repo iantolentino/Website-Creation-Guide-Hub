@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Social Network Website Guide</h1>
+            <p>Complete guide to building social media and networking platforms</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>social-network/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Feed/
+│   │   │   │   ├── PostFeed.js
+│   │   │   │   ├── PostCard.js
+│   │   │   │   ├── CreatePost.js
+│   │   │   │   └── FeedFilters.js
+│   │   │   ├── Profile/
+│   │   │   │   ├── UserProfile.js
+│   │   │   │   ├── ProfileHeader.js
+│   │   │   │   ├── EditProfile.js
+│   │   │   │   └── ProfileStats.js
+│   │   │   ├── Messaging/
+│   │   │   │   ├── ChatList.js
+│   │   │   │   ├── ChatWindow.js
+│   │   │   │   ├── MessageInput.js
+│   │   │   │   └── GroupChat.js
+│   │   │   ├── Notifications/
+│   │   │   │   ├── NotificationList.js
+│   │   │   │   ├── NotificationBell.js
+│   │   │   │   ├── PushNotifications.js
+│   │   │   │   └── NotificationSettings.js
+│   │   │   ├── Friends/
+│   │   │   │   ├── FriendList.js
+│   │   │   │   ├── FriendRequests.js
+│   │   │   │   ├── FindFriends.js
+│   │   │   │   └── FriendSuggestions.js
+│   │   │   ├── Media/
+│   │   │   │   ├── ImageUpload.js
+│   │   │   │   ├── VideoPlayer.js
+│   │   │   │   ├── MediaGallery.js
+│   │   │   │   └── Stories.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Sidebar.js
+│   │   │       ├── Navigation.js
+│   │   │       └── SearchBar.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Profile/
+│   │   │   ├── Messages/
+│   │   │   ├── Notifications/
+│   │   │   ├── Friends/
+│   │   │   ├── Groups/
+│   │   │   └── Settings/
+│   │   ├── hooks/
+│   │   │   ├── useFeed.js
+│   │   │   ├── useMessages.js
+│   │   │   ├── useNotifications.js
+│   │   │   └── useFriends.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── websocket.js
+│   │   │   ├── storage.js
+│   │   │   └── pushNotifications.js
+│   │   └── utils/
+│   │       ├── dateUtils.js
+│   │       ├── textUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── userController.js
+│   │   │   ├── postController.js
+│   │   │   ├── messageController.js
+│   │   │   ├── notificationController.js
+│   │   │   ├── friendController.js
+│   │   │   └── mediaController.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Post.js
+│   │   │   ├── Message.js
+│   │   │   ├── Notification.js
+│   │   │   ├── Friend.js
+│   │   │   ├── Group.js
+│   │   │   ├── Media.js
+│   │   │   └── Like.js
+│   │   ├── routes/
+│   │   │   ├── users.js
+│   │   │   ├── posts.js
+│   │   │   ├── messages.js
+│   │   │   ├── notifications.js
+│   │   │   ├── friends.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── fileUpload.js
+│   │   ├── services/
+│   │   │   ├── websocketService.js
+│   │   │   ├── notificationService.js
+│   │   │   ├── mediaService.js
+│   │   │   └── searchService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── redis.js
+│   │       ├── aws.js
+│   │       └── socket.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── UserManagement/
+│   │   │   ├── ContentModeration/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── realtime/
+    ├── websocket-server/
+    ├── presence-tracking/
+    └── notification-service/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>User profiles with customizable settings</li>
+                    <li>News feed with algorithmic content</li>
+                    <li>Real-time messaging and chat</li>
+                    <li>Friend system with requests and suggestions</li>
+                    <li>Media sharing (images, videos, stories)</li>
+                    <li>Notification system</li>
+                    <li>Groups and communities</li>
+                    <li>Events and calendar integration</li>
+                    <li>Search and discovery features</li>
+                    <li>Privacy and security settings</li>
+                    <li>Mobile app compatibility</li>
+                    <li>Analytics and insights</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European users</li>
+                    <li>User data protection and encryption</li>
+                    <li>Privacy settings and controls</li>
+                    <li>Content visibility options</li>
+                    <li>Data portability features</li>
+                    <li>Age verification for certain features</li>
+                    <li>Third-party app permissions</li>
+                    <li>Data retention and deletion policies</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Account takeover attacks</li>
+                    <li>Cross-site scripting in user content</li>
+                    <li>Data scraping and privacy breaches</li>
+                    <li>Malicious file uploads</li>
+                    <li>Spam and bot accounts</li>
+                    <li>DDoS attacks</li>
+                    <li>API abuse</li>
+                    <li>Session hijacking</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS with Auto Scaling:</strong> For large-scale social networks</li>
+                    <li><strong>Google Cloud Platform:</strong> With global CDN</li>
+                    <li><strong>Azure Kubernetes Service:</strong> For microservices architecture</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective for smaller networks</li>
+                    <li><strong>Self-hosted:</strong> For maximum control</li>
+                    <li><strong>Hybrid cloud:</strong> Mix of cloud and on-premises</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For user relationships and posts</li>
+                    <li><strong>MongoDB:</strong> For flexible user data</li>
+                    <li><strong>Redis:</strong> For caching and real-time features</li>
+                    <li><strong>Cassandra:</strong> For massive scalability</li>
+                    <li><strong>Elasticsearch:</strong> For search and discovery</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React with real-time updates</li>
+                    <li>Vue.js with Vuex for state management</li>
+                    <li>Angular with RxJS for reactive programming</li>
+                    <li>Mobile apps with React Native or Flutter</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js with Socket.io for real-time features</li>
+                    <li>Python/Django with Django Channels</li>
+                    <li>PHP/Laravel with Pusher integration</li>
+                    <li>Go for high-performance services</li>
+                </ul>
+                <p><strong>Real-time Technologies:</strong></p>
+                <ul>
+                    <li>WebSockets for live updates</li>
+                    <li>Server-Sent Events for notifications</li>
+                    <li>Redis Pub/Sub for message broadcasting</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/social" target="_blank">Dribbble - Social Network Design</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/social-networking" target="_blank">ThemeForest - Social Templates</a></li>
+                    <li><a href="https://socket.io" target="_blank">Socket.io Documentation</a></li>
+                    <li><a href="https://github.com/topics/social-network" target="_blank">GitHub - Social Network Projects</a></li>
+                    <li><a href="https://developers.facebook.com" target="_blank">Facebook Developer Platform</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

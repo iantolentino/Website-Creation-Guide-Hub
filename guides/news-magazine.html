@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News/Magazine Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>News/Magazine Website Guide</h1>
+            <p>Complete guide to building content-heavy news portals and online magazines</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>news-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Article/
+│   │   │   │   ├── ArticleCard.js
+│   │   │   │   ├── FeaturedArticle.js
+│   │   │   │   ├── ArticleGrid.js
+│   │   │   │   └── ArticleMeta.js
+│   │   │   ├── Layout/
+│   │   │   │   ├── Header.js
+│   │   │   │   ├── Navigation.js
+│   │   │   │   ├── Sidebar.js
+│   │   │   │   └── Footer.js
+│   │   │   ├── Content/
+│   │   │   │   ├── CategoryList.js
+│   │   │   │   ├── TagCloud.js
+│   │   │   │   ├── RelatedArticles.js
+│   │   │   │   └── Trending.js
+│   │   │   ├── Comments/
+│   │   │   │   ├── CommentThread.js
+│   │   │   │   ├── CommentForm.js
+│   │   │   │   └── ModerationTools.js
+│   │   │   ├── Search/
+│   │   │   │   ├── SearchBar.js
+│   │   │   │   ├── AdvancedSearch.js
+│   │   │   │   └── SearchResults.js
+│   │   │   └── Subscription/
+│   │   │       ├── Paywall.js
+│   │   │       ├── SubscriptionPlans.js
+│   │   │       └── Newsletter.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Article/
+│   │   │   ├── Category/
+│   │   │   ├── Author/
+│   │   │   ├── Search/
+│   │   │   └── Archive/
+│   │   ├── hooks/
+│   │   │   ├── useArticles.js
+│   │   │   ├── useSearch.js
+│   │   │   ├── useComments.js
+│   │   │   └── useAnalytics.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── searchService.js
+│   │   │   └── subscriptionService.js
+│   │   └── utils/
+│   │       ├── dateUtils.js
+│   │       ├── textUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── robots.txt
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── articleController.js
+│   │   │   ├── categoryController.js
+│   │   │   ├── commentController.js
+│   │   │   ├── userController.js
+│   │   │   └── searchController.js
+│   │   ├── models/
+│   │   │   ├── Article.js
+│   │   │   ├── Category.js
+│   │   │   ├── Tag.js
+│   │   │   ├── Author.js
+│   │   │   ├── Comment.js
+│   │   │   ├── Subscription.js
+│   │   │   └── Media.js
+│   │   ├── routes/
+│   │   │   ├── articles.js
+│   │   │   ├── categories.js
+│   │   │   ├── comments.js
+│   │   │   ├── search.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── caching.js
+│   │   ├── services/
+│   │   │   ├── searchService.js
+│   │   │   ├── emailService.js
+│   │   │   ├── imageProcessing.js
+│   │   │   └── rssService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── elasticsearch.js
+│   │       └── aws.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── ArticleEditor/
+│   │   │   ├── CommentModeration/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── content/
+    ├── images/
+    ├── videos/
+    └── assets/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Article management system with rich text editor</li>
+                    <li>Category and tag organization system</li>
+                    <li>Advanced search with filters and full-text search</li>
+                    <li>Comment system with moderation tools</li>
+                    <li>Subscription and paywall management</li>
+                    <li>Author profiles and contributor management</li>
+                    <li>RSS feed generation and distribution</li>
+                    <li>Newsletter subscription and management</li>
+                    <li>Social media integration and sharing</li>
+                    <li>Media gallery and video embedding</li>
+                    <li>Related articles and content recommendations</li>
+                    <li>Analytics and reader engagement tracking</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European readers</li>
+                    <li>Cookie consent for analytics and personalization</li>
+                    <li>Privacy policy detailing data collection</li>
+                    <li>Reader data protection and encryption</li>
+                    <li>Commenter information security</li>
+                    <li>Subscription data protection</li>
+                    <li>Third-party service compliance</li>
+                    <li>Data retention policies</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in search and filtering</li>
+                    <li>Cross-site scripting in comments and articles</li>
+                    <li>Content scraping and article theft</li>
+                    <li>Comment spam and bot attacks</li>
+                    <li>Unauthorized content access (paywall bypass)</li>
+                    <li>Author account compromise</li>
+                    <li>Media file upload vulnerabilities</li>
+                    <li>DDoS attacks during breaking news</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>WordPress VIP:</strong> Enterprise WordPress hosting</li>
+                    <li><strong>Ghost Pro:</strong> Managed Ghost platform</li>
+                    <li><strong>AWS Media Services:</strong> For large-scale media sites</li>
+                    <li><strong>Google Cloud Platform:</strong> With global CDN</li>
+                    <li><strong>Netlify/Vercel:</strong> For JAMstack news sites</li>
+                    <li><strong>Traditional hosting:</strong> With caching and CDN</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex content relationships</li>
+                    <li><strong>MySQL:</strong> Traditional and widely supported</li>
+                    <li><strong>MongoDB:</strong> For flexible content schemas</li>
+                    <li><strong>Elasticsearch:</strong> For advanced search capabilities</li>
+                    <li><strong>Redis:</strong> For caching and session storage</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with SSR for SEO</li>
+                    <li>Vue.js/Nuxt.js with server-side rendering</li>
+                    <li>Traditional PHP with caching</li>
+                    <li>WordPress with custom themes</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django with Django CMS</li>
+                    <li>PHP/Laravel with Laravel Nova</li>
+                    <li>WordPress with custom plugins</li>
+                </ul>
+                <p><strong>Content Management:</strong></p>
+                <ul>
+                    <li>Strapi, Contentful, or Sanity for headless CMS</li>
+                    <li>WordPress as traditional CMS</li>
+                    <li>Ghost for publication-focused sites</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/news" target="_blank">Dribbble - News Design</a></li>
+                    <li><a href="https://themeforest.net/category/cms-themes/news-magazine" target="_blank">ThemeForest - News Templates</a></li>
+                    <li><a href="https://github.com/topics/news-website" target="_blank">GitHub - News Website Projects</a></li>
+                    <li><a href="https://ghost.org/docs" target="_blank">Ghost Documentation</a></li>
+                    <li><a href="https://wordpress.org/news" target="_blank">WordPress News Examples</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

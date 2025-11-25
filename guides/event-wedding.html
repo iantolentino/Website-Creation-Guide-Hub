@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event/Wedding Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Event/Wedding Website Guide</h1>
+            <p>Complete guide to building event management and wedding invitation websites</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>event-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── RSVP/
+│   │   │   │   ├── RSVPForm.js
+│   │   │   │   ├── GuestList.js
+│   │   │   │   ├── AttendanceTracker.js
+│   │   │   │   └── DietaryPreferences.js
+│   │   │   ├── EventDetails/
+│   │   │   │   ├── EventInfo.js
+│   │   │   │   ├── Schedule.js
+│   │   │   │   ├── LocationMap.js
+│   │   │   │   └── Accommodations.js
+│   │   │   ├── Gallery/
+│   │   │   │   ├── PhotoGallery.js
+│   │   │   │   ├── ImageUpload.js
+│   │   │   │   ├── Slideshow.js
+│   │   │   │   └── GuestPhotos.js
+│   │   │   ├── Registry/
+│   │   │   │   ├── GiftRegistry.js
+│   │   │   │   ├── RegistryList.js
+│   │   │   │   └── ThankYouNotes.js
+│   │   │   ├── Countdown/
+│   │   │   │   ├── CountdownTimer.js
+│   │   │   │   ├── SaveTheDate.js
+│   │   │   │   └── Reminders.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── Navigation.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Details/
+│   │   │   ├── RSVP/
+│   │   │   ├── Gallery/
+│   │   │   ├── Registry/
+│   │   │   ├── Travel/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   │   ├── useRSVP.js
+│   │   │   ├── useGuests.js
+│   │   │   ├── useCountdown.js
+│   │   │   └── usePhotos.js
+│   │   ├── services/
+│   │   │   ├── rsvpService.js
+│   │   │   ├── emailService.js
+│   │   │   └── photoService.js
+│   │   └── utils/
+│   │       ├── dateUtils.js
+│   │       ├── validation.js
+│   │       └── invitationUtils.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── images/
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── eventController.js
+│   │   │   ├── guestController.js
+│   │   │   ├── rsvpController.js
+│   │   │   ├── photoController.js
+│   │   │   └── emailController.js
+│   │   ├── models/
+│   │   │   ├── Event.js
+│   │   │   ├── Guest.js
+│   │   │   ├── RSVP.js
+│   │   │   ├── Photo.js
+│   │   │   ├── Gift.js
+│   │   │   └── Message.js
+│   │   ├── routes/
+│   │   │   ├── events.js
+│   │   │   ├── guests.js
+│   │   │   ├── rsvp.js
+│   │   │   ├── photos.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── cors.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── smsService.js
+│   │   │   ├── imageProcessing.js
+│   │   │   └── reminderService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── twilio.js
+│   │       └── aws.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── GuestManager/
+│   │   │   ├── PhotoModeration/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── templates/
+    ├── wedding/
+    ├── corporate-event/
+    └── birthday/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>RSVP system with guest management</li>
+                    <li>Event details with schedule and location information</li>
+                    <li>Photo galleries with upload capabilities</li>
+                    <li>Gift registry integration</li>
+                    <li>Countdown timer and save-the-date features</li>
+                    <li>Travel and accommodation information</li>
+                    <li>Guest messaging and well-wishes system</li>
+                    <li>Mobile-responsive design for easy access</li>
+                    <li>Password protection for private events</li>
+                    <li>Multiple event types (wedding, corporate, birthday)</li>
+                    <li>Email notifications and reminders</li>
+                    <li>Seating chart management</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European guests</li>
+                    <li>Secure handling of guest information</li>
+                    <li>Photo privacy and consent management</li>
+                    <li>Password protection for private events</li>
+                    <li>Data encryption for sensitive information</li>
+                    <li>Guest list confidentiality</li>
+                    <li>Data retention policies post-event</li>
+                    <li>Third-party service compliance</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>Unauthorized RSVP manipulation</li>
+                    <li>Guest information exposure</li>
+                    <li>Photo upload vulnerabilities</li>
+                    <li>Password brute force attacks</li>
+                    <li>Cross-site scripting in guest messages</li>
+                    <li>SQL injection in search and filtering</li>
+                    <li>Email spam through contact forms</li>
+                    <li>DDoS attacks during popular events</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Netlify:</strong> For static event sites</li>
+                    <li><strong>Vercel:</strong> For React-based event sites</li>
+                    <li><strong>Heroku:</strong> For full-stack applications</li>
+                    <li><strong>AWS S3 + CloudFront:</strong> For scalable hosting</li>
+                    <li><strong>WordPress with event plugins:</strong> For easy management</li>
+                    <li><strong>Shared hosting:</strong> For smaller events</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex guest relationships</li>
+                    <li><strong>MongoDB:</strong> For flexible event data</li>
+                    <li><strong>MySQL:</strong> Traditional relational database</li>
+                    <li><strong>SQLite:</strong> For smaller events</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React with beautiful animations</li>
+                    <li>Vue.js with elegant UI components</li>
+                    <li>Traditional HTML/CSS with Bootstrap</li>
+                    <li>Mobile-first responsive design</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with REST API</li>
+                    <li>Python/Flask for lightweight backend</li>
+                    <li>PHP/Laravel for full-featured applications</li>
+                    <li>Serverless functions for specific features</li>
+                </ul>
+                <p><strong>Third-party Integrations:</strong></p>
+                <ul>
+                    <li>Google Maps for location</li>
+                    <li>Amazon Registry or other gift services</li>
+                    <li>Email services (SendGrid, Mailgun)</li>
+                    <li>Photo storage (Cloudinary, AWS S3)</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/wedding" target="_blank">Dribbble - Wedding Design</a></li>
+                    <li><a href="https://themeforest.net/category/site-templates/wedding" target="_blank">ThemeForest - Wedding Templates</a></li>
+                    <li><a href="https://github.com/topics/wedding-website" target="_blank">GitHub - Wedding Website Projects</a></li>
+                    <li><a href="https://withjoy.com" target="_blank">With Joy - Wedding Website Inspiration</a></li>
+                    <li><a href="https://www.zola.com" target="_blank">Zola - Wedding Website Examples</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

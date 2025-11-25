@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Community Forum Website Guide</h1>
+            <p>Complete guide to building discussion forums and community platforms</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>community-forum/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Discussion/
+│   │   │   │   ├── ThreadList.js
+│   │   │   │   ├── ThreadCard.js
+│   │   │   │   ├── ThreadView.js
+│   │   │   │   └── NewThread.js
+│   │   │   ├── Posts/
+│   │   │   │   ├── PostList.js
+│   │   │   │   ├── PostCard.js
+│   │   │   │   ├── PostEditor.js
+│   │   │   │   └── PostActions.js
+│   │   │   ├── Users/
+│   │   │   │   ├── UserProfile.js
+│   │   │   │   ├── UserCard.js
+│   │   │   │   ├── UserList.js
+│   │   │   │   └── Avatar.js
+│   │   │   ├── Moderation/
+│   │   │   │   ├── ModTools.js
+│   │   │   │   ├── ReportSystem.js
+│   │   │   │   ├── BanManagement.js
+│   │   │   │   └── ContentReview.js
+│   │   │   ├── Messaging/
+│   │   │   │   ├── PrivateMessages.js
+│   │   │   │   ├── Conversation.js
+│   │   │   │   ├── MessageList.js
+│   │   │   │   └── ComposeMessage.js
+│   │   │   ├── Search/
+│   │   │   │   ├── SearchBar.js
+│   │   │   │   ├── AdvancedSearch.js
+│   │   │   │   └── SearchResults.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Navigation.js
+│   │   │       ├── Sidebar.js
+│   │   │       └── Footer.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Forum/
+│   │   │   ├── Thread/
+│   │   │   ├── Profile/
+│   │   │   ├── Messages/
+│   │   │   ├── Search/
+│   │   │   └── Admin/
+│   │   ├── hooks/
+│   │   │   ├── useThreads.js
+│   │   │   ├── usePosts.js
+│   │   │   ├── useUsers.js
+│   │   │   └── useModeration.js
+│   │   ├── services/
+│   │   │   ├── forumService.js
+│   │   │   ├── userService.js
+│   │   │   └── searchService.js
+│   │   └── utils/
+│   │       ├── textUtils.js
+│   │       ├── dateUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── robots.txt
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── forumController.js
+│   │   │   ├── threadController.js
+│   │   │   ├── postController.js
+│   │   │   ├── userController.js
+│   │   │   ├── moderationController.js
+│   │   │   └── searchController.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Forum.js
+│   │   │   ├── Thread.js
+│   │   │   ├── Post.js
+│   │   │   ├── Category.js
+│   │   │   ├── Message.js
+│   │   │   ├── Report.js
+│   │   │   └── Ban.js
+│   │   ├── routes/
+│   │   │   ├── forums.js
+│   │   │   ├── threads.js
+│   │   │   ├── posts.js
+│   │   │   ├── users.js
+│   │   │   ├── messages.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   ├── moderation.js
+│   │   │   └── spamProtection.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── notificationService.js
+│   │   │   ├── searchService.js
+│   │   │   └── spamDetection.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── redis.js
+│   │       └── elasticsearch.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── UserManagement/
+│   │   │   ├── ContentModeration/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── moderation/
+    ├── automated-rules/
+    ├── spam-filters/
+    └── content-policies/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Forum categories and sub-forums organization</li>
+                    <li>Thread creation and discussion management</li>
+                    <li>User profiles with activity tracking</li>
+                    <li>Private messaging system</li>
+                    <li>Advanced search with filters</li>
+                    <li>Moderation tools and reporting system</li>
+                    <li>User roles and permissions system</li>
+                    <li>Real-time notifications</li>
+                    <li>Rich text editor with media embedding</li>
+                    <li>Reputation and gamification system</li>
+                    <li>Spam and abuse protection</li>
+                    <li>Mobile-responsive design</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European users</li>
+                    <li>User data protection and encryption</li>
+                    <li>Private message security</li>
+                    <li>User consent for data processing</li>
+                    <li>Data retention and deletion policies</li>
+                    <li>Anonymous posting options</li>
+                    <li>Profile visibility controls</li>
+                    <li>Third-party service compliance</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in search and filtering</li>
+                    <li>Cross-site scripting in posts and messages</li>
+                    <li>User account compromise</li>
+                    <li>Spam and bot attacks</li>
+                    <li>Content scraping</li>
+                    <li>DDoS attacks</li>
+                    <li>Privilege escalation</li>
+                    <li>Data leakage through APIs</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Discourse:</strong> Modern forum platform</li>
+                    <li><strong>phpBB:</strong> Traditional PHP forum</li>
+                    <li><strong>NodeBB:</strong> Node.js based forum</li>
+                    <li><strong>AWS EC2/RDS:</strong> For custom solutions</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective VPS</li>
+                    <li><strong>Shared hosting:</strong> For smaller communities</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex relationships</li>
+                    <li><strong>MySQL:</strong> Traditional and widely supported</li>
+                    <li><strong>MongoDB:</strong> For flexible content storage</li>
+                    <li><strong>Redis:</strong> For caching and real-time features</li>
+                    <li><strong>Elasticsearch:</strong> For advanced search</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React with real-time updates</li>
+                    <li>Vue.js with Vuex for state management</li>
+                    <li>Traditional PHP with jQuery</li>
+                    <li>Mobile-first responsive design</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with Socket.io</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Action Cable</li>
+                </ul>
+                <p><strong>Real-time Features:</strong></p>
+                <ul>
+                    <li>WebSockets for live updates</li>
+                    <li>Server-Sent Events for notifications</li>
+                    <li>Redis for pub/sub functionality</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/forum" target="_blank">Dribbble - Forum Design</a></li>
+                    <li><a href="https://themeforest.net/category/forums" target="_blank">ThemeForest - Forum Templates</a></li>
+                    <li><a href="https://www.discourse.org" target="_blank">Discourse Platform</a></li>
+                    <li><a href="https://www.phpbb.com" target="_blank">phpBB Forum Software</a></li>
+                    <li><a href="https://github.com/topics/forum" target="_blank">GitHub - Forum Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

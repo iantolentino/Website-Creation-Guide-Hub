@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Booking/Reservation Website Guide</h1>
+            <p>Complete guide to building appointment and reservation booking systems</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>booking-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Calendar/
+│   │   │   │   ├── BookingCalendar.js
+│   │   │   │   ├── TimeSlotPicker.js
+│   │   │   │   ├── AvailabilityGrid.js
+│   │   │   │   └── CalendarNavigation.js
+│   │   │   ├── Booking/
+│   │   │   │   ├── BookingForm.js
+│   │   │   │   ├── ServiceSelection.js
+│   │   │   │   ├── CustomerDetails.js
+│   │   │   │   └── Confirmation.js
+│   │   │   ├── Management/
+│   │   │   │   ├── BookingList.js
+│   │   │   │   ├── BookingDetails.js
+│   │   │   │   ├── Cancellation.js
+│   │   │   │   └── Rescheduling.js
+│   │   │   ├── Services/
+│   │   │   │   ├── ServiceList.js
+│   │   │   │   ├── ServiceCard.js
+│   │   │   │   ├── Pricing.js
+│   │   │   │   └── Duration.js
+│   │   │   ├── Notifications/
+│   │   │   │   ├── Reminders.js
+│   │   │   │   ├── Alerts.js
+│   │   │   │   ├── Confirmations.js
+│   │   │   │   └── Notifications.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       └── Search.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Book/
+│   │   │   ├── Services/
+│   │   │   ├── MyBookings/
+│   │   │   ├── Management/
+│   │   │   └── Contact/
+│   │   ├── hooks/
+│   │   │   ├── useBooking.js
+│   │   │   ├── useAvailability.js
+│   │   │   ├── useCalendar.js
+│   │   │   └── useNotifications.js
+│   │   ├── services/
+│   │   │   ├── bookingService.js
+│   │   │   ├── calendarService.js
+│   │   │   └── notificationService.js
+│   │   └── utils/
+│   │       ├── dateUtils.js
+│   │       ├── timeUtils.js
+│   │       └── validation.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── bookingController.js
+│   │   │   ├── availabilityController.js
+│   │   │   ├── serviceController.js
+│   │   │   ├── customerController.js
+│   │   │   └── notificationController.js
+│   │   ├── models/
+│   │   │   ├── Booking.js
+│   │   │   ├── Service.js
+│   │   │   ├── Customer.js
+│   │   │   ├── Availability.js
+│   │   │   ├── TimeSlot.js
+│   │   │   └── Resource.js
+│   │   ├── routes/
+│   │   │   ├── bookings.js
+│   │   │   ├── availability.js
+│   │   │   ├── services.js
+│   │   │   ├── customers.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── availabilityCheck.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   ├── smsService.js
+│   │   │   ├── calendarSync.js
+│   │   │   └── paymentService.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── twilio.js
+│   │       └── stripe.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── BookingManager/
+│   │   │   ├── CalendarView/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── integrations/
+    ├── google-calendar/
+    ├── outlook-calendar/
+    └── payment-gateways/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Interactive calendar with real-time availability</li>
+                    <li>Time slot selection and duration configuration</li>
+                    <li>Service and resource management</li>
+                    <li>Customer information and profile management</li>
+                    <li>Booking confirmation and payment processing</li>
+                    <li>Email and SMS notifications</li>
+                    <li>Calendar synchronization (Google, Outlook)</li>
+                    <li>Booking modifications and cancellations</li>
+                    <li>Waitlist management</li>
+                    <li>Multi-language and timezone support</li>
+                    <li>Mobile-optimized booking experience</li>
+                    <li>Analytics and reporting dashboard</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European customers</li>
+                    <li>Secure handling of customer information</li>
+                    <li>Payment Card Industry Data Security Standard (PCI DSS)</li>
+                    <li>Data encryption for sensitive information</li>
+                    <li>Privacy policy and data usage transparency</li>
+                    <li>Customer consent for communications</li>
+                    <li>Data retention and deletion policies</li>
+                    <li>Third-party service compliance</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in booking searches</li>
+                    <li>Cross-site scripting in customer inputs</li>
+                    <li>Payment data interception</li>
+                    <li>Availability manipulation</li>
+                    <li>Calendar synchronization vulnerabilities</li>
+                    <li>Customer data exposure</li>
+                    <li>Booking system abuse</li>
+                    <li>DDoS attacks during peak booking times</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS EC2/RDS:</strong> For scalable booking platforms</li>
+                    <li><strong>Google Cloud Platform:</strong> With global availability</li>
+                    <li><strong>Azure App Service:</strong> For .NET applications</li>
+                    <li><strong>Heroku:</strong> For rapid deployment</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective VPS solutions</li>
+                    <li><strong>WordPress with booking plugins:</strong> For smaller businesses</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL:</strong> For complex booking relationships</li>
+                    <li><strong>MySQL:</strong> Traditional and widely supported</li>
+                    <li><strong>MongoDB:</strong> For flexible booking data</li>
+                    <li><strong>Redis:</strong> For caching availability data</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React with calendar components</li>
+                    <li>Vue.js with Vuex for state management</li>
+                    <li>Angular with Material Design</li>
+                    <li>Traditional stack with jQuery and Bootstrap</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Active Record</li>
+                </ul>
+                <p><strong>Calendar & Scheduling:</strong></p>
+                <ul>
+                    <li>FullCalendar.js for interactive calendars</li>
+                    <li>Google Calendar API integration</li>
+                    <li>Outlook Calendar API integration</li>
+                    <li>Custom calendar components</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/booking" target="_blank">Dribbble - Booking Design</a></li>
+                    <li><a href="https://themeforest.net/category/plugins/php/calendars-events" target="_blank">ThemeForest - Booking Templates</a></li>
+                    <li><a href="https://fullcalendar.io" target="_blank">FullCalendar.js Documentation</a></li>
+                    <li><a href="https://developers.google.com/calendar" target="_blank">Google Calendar API Docs</a></li>
+                    <li><a href="https://github.com/topics/booking-system" target="_blank">GitHub - Booking System Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

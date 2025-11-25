@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory Website Guide - WebDev Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="guide-hero">
+        <div class="container">
+            <a href="../index.html" class="back-btn">Back to Home</a>
+            <h1>Directory Website Guide</h1>
+            <p>Complete guide to building business directory and listing platforms</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="guide-content">
+            <div class="guide-section" id="folder-structure">
+                <h3>Folder Structure</h3>
+                <pre><code>directory-website/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Listings/
+│   │   │   │   ├── ListingCard.js
+│   │   │   │   ├── ListingGrid.js
+│   │   │   │   ├── ListingDetails.js
+│   │   │   │   └── FeaturedListings.js
+│   │   │   ├── Search/
+│   │   │   │   ├── SearchFilters.js
+│   │   │   │   ├── LocationSearch.js
+│   │   │   │   ├── CategoryFilter.js
+│   │   │   │   └── AdvancedSearch.js
+│   │   │   ├── Maps/
+│   │   │   │   ├── MapView.js
+│   │   │   │   ├── ListingMap.js
+│   │   │   │   ├── ClusterMap.js
+│   │   │   │   └── Directions.js
+│   │   │   ├── Business/
+│   │   │   │   ├── BusinessProfile.js
+│   │   │   │   ├── ClaimBusiness.js
+│   │   │   │   ├── BusinessDashboard.js
+│   │   │   │   └── Analytics.js
+│   │   │   ├── Reviews/
+│   │   │   │   ├── ReviewList.js
+│   │   │   │   ├── ReviewForm.js
+│   │   │   │   ├── RatingSystem.js
+│   │   │   │   └── ReviewModeration.js
+│   │   │   ├── Categories/
+│   │   │   │   ├── CategoryList.js
+│   │   │   │   ├── CategoryCard.js
+│   │   │   │   ├── Subcategories.js
+│   │   │   │   └── BrowseCategories.js
+│   │   │   └── Common/
+│   │   │       ├── Header.js
+│   │   │       ├── Footer.js
+│   │   │       ├── Navigation.js
+│   │   │       └── Breadcrumbs.js
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Listings/
+│   │   │   ├── Categories/
+│   │   │   ├── Business/
+│   │   │   ├── AddListing/
+│   │   │   ├── Search/
+│   │   │   └── About/
+│   │   ├── hooks/
+│   │   │   ├── useListings.js
+│   │   │   ├── useSearch.js
+│   │   │   ├── useMaps.js
+│   │   │   └── useReviews.js
+│   │   ├── services/
+│   │   │   ├── listingService.js
+│   │   │   ├── searchService.js
+│   │   │   ├── mapService.js
+│   │   │   └── reviewService.js
+│   │   └── utils/
+│   │       ├── locationUtils.js
+│   │       ├── validation.js
+│   │       └── formatting.js
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── manifest.json
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   ├── listingController.js
+│   │   │   ├── businessController.js
+│   │   │   ├── categoryController.js
+│   │   │   ├── reviewController.js
+│   │   │   ├── searchController.js
+│   │   │   └── userController.js
+│   │   ├── models/
+│   │   │   ├── Listing.js
+│   │   │   ├── Business.js
+│   │   │   ├── Category.js
+│   │   │   ├── Review.js
+│   │   │   ├── User.js
+│   │   │   ├── Location.js
+│   │   │   ├── Claim.js
+│   │   │   └── Subscription.js
+│   │   ├── routes/
+│   │   │   ├── listings.js
+│   │   │   ├── businesses.js
+│   │   │   ├── categories.js
+│   │   │   ├── reviews.js
+│   │   │   ├── search.js
+│   │   │   └── admin.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── validation.js
+│   │   │   ├── rateLimit.js
+│   │   │   └── geocoding.js
+│   │   ├── services/
+│   │   │   ├── geocodingService.js
+│   │   │   ├── emailService.js
+│   │   │   ├── searchService.js
+│   │   │   └── imageProcessing.js
+│   │   └── config/
+│   │       ├── database.js
+│   │       ├── mapbox.js
+│   │       └── aws.js
+│   └── package.json
+├── admin/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   ├── ListingManagement/
+│   │   │   ├── ReviewModeration/
+│   │   │   └── Analytics/
+│   │   └── pages/
+│   └── package.json
+└── data-import/
+    ├── csv-import/
+    ├── api-integrations/
+    └── data-cleaning/</code></pre>
+            </div>
+            
+            <div class="guide-section" id="key-components">
+                <h3>Key Components</h3>
+                <ul>
+                    <li>Business listing management with rich profiles</li>
+                    <li>Advanced search with location-based filtering</li>
+                    <li>Interactive maps with business locations</li>
+                    <li>Review and rating system with moderation</li>
+                    <li>Category and subcategory organization</li>
+                    <li>Business claiming and verification system</li>
+                    <li>Featured listings and premium placement</li>
+                    <li>Analytics and business insights</li>
+                    <li>Mobile-responsive design</li>
+                    <li>Multi-language support</li>
+                    <li>Social media integration</li>
+                    <li>Payment processing for premium features</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="privacy">
+                <h3>Privacy Requirements</h3>
+                <ul>
+                    <li>GDPR compliance for European users</li>
+                    <li>Business data protection</li>
+                    <li>Reviewer anonymity options</li>
+                    <li>Data encryption for sensitive information</li>
+                    <li>Privacy policy and data usage transparency</li>
+                    <li>Business owner consent for data display</li>
+                    <li>Data retention and deletion policies</li>
+                    <li>Third-party service compliance</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="security">
+                <h3>Security Vulnerabilities</h3>
+                <ul>
+                    <li>SQL injection in search and filtering</li>
+                    <li>Cross-site scripting in reviews and business descriptions</li>
+                    <li>Business listing spam</li>
+                    <li>Review manipulation and fake reviews</li>
+                    <li>Business claiming fraud</li>
+                    <li>Data scraping of business information</li>
+                    <li>Payment data interception</li>
+                    <li>DDoS attacks</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="deployment">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>AWS EC2/RDS:</strong> For scalable directory platforms</li>
+                    <li><strong>Google Cloud Platform:</strong> With Maps API integration</li>
+                    <li><strong>Azure App Service:</strong> For enterprise solutions</li>
+                    <li><strong>DigitalOcean:</strong> Cost-effective VPS solutions</li>
+                    <li><strong>WordPress with directory plugins:</strong> For smaller directories</li>
+                    <li><strong>Custom hosting:</strong> For specialized requirements</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="database">
+                <h3>Database Options</h3>
+                <ul>
+                    <li><strong>PostgreSQL with PostGIS:</strong> For location-based queries</li>
+                    <li><strong>MongoDB:</strong> For flexible business data</li>
+                    <li><strong>MySQL:</strong> Traditional relational database</li>
+                    <li><strong>Elasticsearch:</strong> For advanced search capabilities</li>
+                    <li><strong>Redis:</strong> For caching and session storage</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="technologies">
+                <h3>Frontend & Backend Technologies</h3>
+                <p><strong>Frontend Options:</strong></p>
+                <ul>
+                    <li>React/Next.js with server-side rendering</li>
+                    <li>Vue.js/Nuxt.js with Vuex</li>
+                    <li>Angular with Material Design</li>
+                    <li>Traditional stack with jQuery and Bootstrap</li>
+                </ul>
+                <p><strong>Backend Options:</strong></p>
+                <ul>
+                    <li>Node.js/Express with TypeScript</li>
+                    <li>Python/Django with Django REST Framework</li>
+                    <li>PHP/Laravel with Eloquent ORM</li>
+                    <li>Ruby on Rails with Active Record</li>
+                </ul>
+                <p><strong>Map & Location Services:</strong></p>
+                <ul>
+                    <li>Google Maps JavaScript API</li>
+                    <li>Mapbox GL JS</li>
+                    <li>Leaflet with OpenStreetMap</li>
+                    <li>Google Places API for autocomplete</li>
+                </ul>
+            </div>
+            
+            <div class="guide-section" id="layout">
+                <h3>Layout Resources</h3>
+                <ul>
+                    <li><a href="https://dribbble.com/tags/directory" target="_blank">Dribbble - Directory Design</a></li>
+                    <li><a href="https://themeforest.net/category/wordpress/directory" target="_blank">ThemeForest - Directory Templates</a></li>
+                    <li><a href="https://developers.google.com/maps/documentation" target="_blank">Google Maps API Docs</a></li>
+                    <li><a href="https://docs.mapbox.com" target="_blank">Mapbox Documentation</a></li>
+                    <li><a href="https://github.com/topics/directory" target="_blank">GitHub - Directory Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
